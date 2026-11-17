@@ -1,0 +1,39 @@
+{
+  "name": "smartchain-supply-chain",
+  "version": "1.0.2",
+  "private": true,
+  "description": "Blockchain-based pharmaceutical supply-chain tracking with Solidity smart contracts and IoT condition monitoring.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:gas": "cross-env REPORT_GAS=true hardhat test",
+    "benchmark:local": "hardhat run scripts/benchmark.js",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "seed:local": "hardhat run scripts/seed-demo.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "frontend:install": "npm --prefix frontend install",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "sensor:simulate": "node iot/sensor-simulator.js",
+    "check:local": "hardhat run scripts/check-local.js --network localhost",
+    "check:local:existing": "hardhat run scripts/check-local-existing.js --network localhost",
+    "setup:local": "npm run compile && npm run deploy:local && npm run seed:local && npm run check:local",
+    "setup:local:existing": "node scripts/require-existing-wallet.js && npm run compile && npm run deploy:local && npm run seed:local && npm run check:local && npm run check:local:existing",
+    "verify": "npm run compile && npm test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "cross-env": "^7.0.3",
+    "hardhat": "^2.22.18",
+    "hardhat-gas-reporter": "^1.0.10"
+  },
+  "dependencies": {
+    "ethers": "^6.13.4"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "network": "not-deployed",
+  "chainId": 31337,
+  "participantRegistry": "0x0000000000000000000000000000000000000000",
+  "supplyChain": "0x0000000000000000000000000000000000000000"
+}

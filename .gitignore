@@ -1,0 +1,14 @@
+node_modules/
+frontend/node_modules/
+artifacts/
+cache/
+coverage/
+.env
+frontend/.env
+frontend/.env.local
+.DS_Store
+*.log
+deployments/*.json
+results/demo-accounts.json
+results/gas-reports/local-gas.csv
+results/gas-reports/local-gas.json
